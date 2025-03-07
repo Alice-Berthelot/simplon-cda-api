@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const jokeRoutes = require('../routes/joke')
+require('dotenv').config();
 
 app.use(express.json()); 
 
