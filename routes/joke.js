@@ -6,9 +6,9 @@ const { getOneJoke } = require("../controllers/jokeController");
 const { getRandomJoke } = require("../controllers/jokeController");
 const { createJoke } = require("../controllers/jokeController");
 
+router.get("/random", getRandomJoke);
 router.get("/", getAllJokes);
 router.get("/:id", getOneJoke);
-router.get("/random", getRandomJoke);
 router.post("/", createJoke);
 
 module.exports = router;

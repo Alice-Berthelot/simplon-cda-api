@@ -25,13 +25,18 @@ const getOneJoke = async (req, res, next) => {
 // A MODIFIER :
 const getRandomJoke = async (req, res, next) => {
   try {
+    const jokes = await Joke.findAll();
+    console.log("All jokes:", jokes);
+    const randomIndex = Math.floor(Math.random() * jokes.length);
+    console.log("randomIndex is", jokes[randomIndex])
+    return res.status(200).json(jokes[randomIndex]);
     // const count = await Joke.count();
     // const randomIndex = Math.floor(Math.random() * count);
     // const joke = await Joke.findAll({
     //   offset: randomIndex,
     //   limit: 1,
     // });
-    // return res.status(200).json(joke);
+    // 
   } catch (err) {
     res
       .status(500)
