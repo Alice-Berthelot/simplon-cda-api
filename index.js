@@ -14,8 +14,8 @@ sequelize
     );
   });
 
-const PORT = process.env.APP_PORT || 3000;
+const app_port = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+app.listen(app_port, () => {
+  console.log(`Server is running on http://localhost:${app_port}`);
 });
